@@ -2,13 +2,10 @@ package com.example.societycity.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple200 = Color(0xFFBB86FC)
 val Purple500 = Color(0xFF389BF1)
 val Teal200 = Color(0xFFFFEB3B)
-val red = Color(0xFFFF3C3C)
-val blue = Color(0xFF389BF1)
+val blue = Color(0xFF339FFE)
 val white = Color(0xFFFFFFFF)
-val black = Color(0xFF000000)
 val dark_blue = Color(0xFF00396B)
 val b_blue = Color(0xFF2D6799)
 val light_blue=Color(0xFF7FC8E8)

@@ -39,12 +39,90 @@ fun HomeScreen() {
             .background(color = blue),
         contentAlignment = Alignment.BottomCenter
     ) {
-        Column(
+        Row(
             modifier = Modifier.fillMaxSize(),
         ) {
-            Text(text = "abhishek")
-            Text(text = "abhishek4")
-            Text(text = "abhishek5")
+            Row(
+                modifier = Modifier.padding(top = 15.dp,start = 16.dp),
+            )
+            {
+                Text(
+                    text = "AS",
+                    color= white,
+                    modifier = Modifier
+                        .height(40.dp)
+                        .width(40.dp)
+                        .clip(shape = CircleShape)
+                        .background(light_blue)
+                        .padding(top = 12.dp)
+                        .size(40.dp)
+                        .padding(start = 12.dp, end = 3.dp),
+                    fontSize = 12.sp,
+                )
+            }
+            Row(
+                modifier = Modifier
+                    .padding(top = 23.dp,start = 13.dp)
+            )
+            {
+                Text(
+                    text = "B-104, Yash S..",
+                    modifier = Modifier
+                        .height(25.dp)
+                        .width(130.dp),
+                    fontSize = 16.sp,
+                )
+                Text(
+                    text = "⌄",
+                    modifier = Modifier
+                        .height(25.dp)
+                        .width(30.dp),
+                    fontSize = 18.sp,
+                )
+            }
+            Row(
+                modifier = Modifier.padding(start =0.dp))
+            {
+                Image(
+                    painterResource(id = R.drawable.admin), "admin",
+                    Modifier
+                        .padding(top = 5.dp)
+                        .size(60.dp)
+                        .width(50.dp)
+                        .height(50.dp)
+                )
+            }
+            Box(
+                modifier = Modifier.padding(start =0.dp))
+            {
+                Image(
+                    painterResource(id = R.drawable.rectangle_5), "admin",
+                    Modifier
+                        .padding(top = 15.dp)
+                        .size(45.dp)
+                        .width(50.dp)
+                        .height(50.dp),
+                )
+                Row(
+                    modifier = Modifier.padding(start =0.dp, top = 15.dp))
+                {
+                    Text(text = "Ads", color = white, modifier = Modifier.padding(top = 12.dp, start = 6.dp))
+                }
+            }
+            Row(
+                modifier = Modifier.padding(start =0.dp, top = 15.dp))
+            {
+                Image(
+                    painterResource(id = R.drawable.baseline_notifications_none_24), "notification",
+                    Modifier
+                        .padding(start = 8.dp, top = 5.dp)
+                        .size(38.dp)
+                        .width(50.dp)
+                        .height(50.dp)
+                )
+            }
+
+
         }
 
 
@@ -219,7 +297,8 @@ fun HomeScreen() {
             {
                 Image(
                     painterResource(id = R.drawable.society_account), "App",
-                    Modifier.padding(top = 20.dp)
+                    Modifier
+                        .padding(top = 20.dp)
                         .size(90.dp)
                         .width(130.dp)
                         .height(130.dp)
@@ -244,7 +323,8 @@ fun HomeScreen() {
             {
                 Image(
                     painterResource(id = R.drawable.society_corner), "App",
-                    Modifier.padding(top = 20.dp)
+                    Modifier
+                        .padding(top = 20.dp)
                         .size(90.dp)
                         .width(130.dp)
                         .height(130.dp)

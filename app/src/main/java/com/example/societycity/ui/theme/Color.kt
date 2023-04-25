@@ -14,6 +14,11 @@ val b_blue = Color(0xFF2D6799)
 val light_blue=Color(0xFF7FC8E8)
 val grayscal=Color(0xFFF7F7FC)
 val grayscaltitle=Color(0xFF14142B)
+val darkgreen=Color(0xFF30A283)
+val purple=Color(0xFF9B51E0)
+
+
+
 
 
 

@@ -8,6 +8,7 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Card
 import androidx.compose.material.IconButton
 import androidx.compose.material.Text
@@ -105,14 +106,55 @@ fun HomeScreen() {
                     fontWeight = FontWeight.Bold
                 )
             }
+
+            Row(
+                modifier = Modifier.padding(top = 233.dp,start = 40.dp, end = 200.dp),
+                )
+                {
+                    Text(
+                        text = "AS",
+                        color= white,
+                        modifier = Modifier
+                            .height(50.dp)
+                            .width(50.dp)
+                            .clip(shape = CircleShape)
+                            .background(darkgreen)
+                            .padding(top = 14.dp)
+                            .size(40.dp)
+                            .padding(start = 15.dp, end = 3.dp),
+                        fontSize = 14.sp,
+                    )
+                }
+
+            Row(
+                modifier = Modifier.padding(top = 233.dp,start = 130.dp, end = 200.dp),
+            )
+            {
+                Text(
+                    text = "MS",
+                    color= white,
+                    modifier = Modifier
+                        .height(50.dp)
+                        .width(50.dp)
+                        .clip(shape = CircleShape)
+                        .background(purple)
+                        .padding(top = 14.dp)
+                        .size(40.dp)
+                        .padding(start = 15.dp, end = 3.dp),
+                    fontSize = 14.sp,
+                )
+            }
+
             Row(
                 modifier = Modifier
                     .padding(top = 285.dp,start = 24.dp, end = 193.dp)
             )
             {
                 Text(
-                    text = "Abhishek s..",
-                    modifier = Modifier.height(15.dp).width(85.dp)
+                    text = "Abhishek Si..",
+                    modifier = Modifier
+                        .height(15.dp)
+                        .width(85.dp)
                         .padding(top = 1.dp, start = 6.dp, end = 3.dp),
                     fontSize = 12.sp,
                 )
@@ -121,7 +163,9 @@ fun HomeScreen() {
                 //name and time
                 Text(
                     text = "Mohan Sa..",
-                    modifier = Modifier.height(15.dp).width(120.dp)
+                    modifier = Modifier
+                        .height(15.dp)
+                        .width(120.dp)
                         .padding(top = 1.dp, start = 11.dp, end = 3.dp),
                     fontSize = 12.sp,
                 )
@@ -135,30 +179,62 @@ fun HomeScreen() {
                 val formatter =DateTimeFormatter.ofPattern("d MMMM,h:mm a", Locale.ENGLISH)
                 val formatterDatetime=currentDateTime.format(formatter)
                 Text(text = formatterDatetime,
-                    modifier = Modifier.height(15.dp).width(74.dp)
+                    modifier = Modifier
+                        .height(15.dp)
+                        .width(74.dp)
                         .padding(top = 2.dp, start = 5.dp, end = 3.dp),
                     fontSize = 9.sp,
                     )
                 Text(text = formatterDatetime,
-                    modifier = Modifier.height(15.dp).width(120.dp)
+                    modifier = Modifier
+                        .height(15.dp)
+                        .width(120.dp)
                         .padding(top = 2.dp, start = 20.dp, end = 3.dp),
                     fontSize = 9.sp,
                 )
 
             }
-            Row(
+            Row(  modifier = Modifier
+                .padding(top = 328.dp, bottom = 370.dp, start = 35.dp, end = 205.dp)
+                .height(128.dp)
+                .width(140.dp)
+                .border(width = 2.dp, color = Color.LightGray, shape = CornerShape10.small)
+            )
+            {
+                Text(
+                    text = "view all >",
+                    color= blue,
+                    modifier = Modifier
+                        .padding(top = 0.dp, start = 45.dp, end = 39.dp),
+                    fontSize = 14.sp,
+                )
+            }
+            //x
+            Column(
                 modifier = Modifier
                     .padding(top = 197.dp, bottom = 358.dp, start = 205.dp, end = 108.dp)
                     .height(169.dp)
                     .width(76.dp)
-                    .background(color = grayscal, shape = CornerShape10.small)
-            )
+                    .background(color = grayscal, shape = CornerShape10.small))
             {
-                Text(text = "abhishek")
-                Text(text = "abhishek4")
+                Image(
+                    painterResource(id = R.drawable.society_account), "App",
+                    Modifier.padding(top = 20.dp)
+                        .size(90.dp)
+                        .width(130.dp)
+                        .height(130.dp)
+                )}
+                Row(modifier = Modifier
+                    .padding(top = 197.dp, bottom = 358.dp, start = 205.dp, end = 108.dp)
+                    .height(169.dp)
+                    .width(76.dp)) {
+                    Text(text = "Society Account",
+                        modifier = Modifier.padding(top = 90.dp, start = 15.dp),
+                        fontSize = 14.sp,
+                    )
+                }
 
-            }
-            Row(
+            Column(
                 modifier = Modifier
                     .padding(top = 197.dp, bottom = 358.dp, start = 290.dp, end = 25.dp)
                     .height(169.dp)
@@ -166,9 +242,22 @@ fun HomeScreen() {
                     .background(color = grayscal, shape = CornerShape10.small)
             )
             {
-                Text(text = "abhishek")
-                Text(text = "abhishek4")
-                Text(text = "abhishek5")
+                Image(
+                    painterResource(id = R.drawable.society_corner), "App",
+                    Modifier.padding(top = 20.dp)
+                        .size(90.dp)
+                        .width(130.dp)
+                        .height(130.dp)
+                )
+            }
+            Row(modifier = Modifier
+                .padding(top = 197.dp, bottom = 358.dp, start = 290.dp, end = 25.dp)
+                .height(169.dp)
+                .width(76.dp)) {
+                Text(text = "Society Corner",
+                    modifier = Modifier.padding(top = 90.dp, start = 15.dp),
+                    fontSize = 14.sp,
+                )
             }
         }
 

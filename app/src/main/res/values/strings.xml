@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Society City</string>
+
+    <string name="home">Home</string>
+    <string name="discover">Discover</string>
+    <string name="popular">Popular</string>
+    <string name="dailyneed">Daily Need</string>
+    <string name="myprofile">My Profile</string>
+</resources>

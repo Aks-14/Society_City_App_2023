@@ -4,9 +4,9 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.customnavigationbar.bottomnav.BottomBarScreen
 import com.example.societycity.bottomNavigationFile.*
 import com.example.societycity.screen.HomeScreen
+import com.example.societycity.screen.MyProfileScreen
 
 
 @Composable

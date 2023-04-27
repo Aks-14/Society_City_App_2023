@@ -121,10 +121,7 @@ fun HomeScreen() {
                         .height(50.dp)
                 )
             }
-
-
         }
-
 
         Card(
             backgroundColor = Color.White,
@@ -150,7 +147,7 @@ fun HomeScreen() {
                 )
                 ImageSlider(images = imageList,
                 heading = "Lorem Ipsum", sub_heading = "Place holder text for banner, may go in 3 lines"
-                    )
+                )
             }
 // next box
             Box(

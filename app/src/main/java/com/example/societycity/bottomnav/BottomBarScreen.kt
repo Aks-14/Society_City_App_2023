@@ -1,4 +1,4 @@
-package com.example.customnavigationbar.bottomnav
+package com.example.societycity.bottomnav
 
 import com.example.societycity.R
 
@@ -37,17 +37,15 @@ sealed class BottomBarScreen(
     // for dailyneed
     object DailyNeed: BottomBarScreen(
         route = "dailyNeed",
-        title = "DailyNeed",
+        title = "Daily Need",
         icon = R.drawable.grid_view_dailyneeds,
         icon_focused = R.drawable.grid_view_dailyneeds
     )
     // for profile
     object Profile: BottomBarScreen(
         route = "myprofile",
-        title = "MyProfile",
+        title = "My Profile",
         icon = R.drawable.profile_person_outline,
         icon_focused = R.drawable.profile_person_outline
     )
-
-
 }

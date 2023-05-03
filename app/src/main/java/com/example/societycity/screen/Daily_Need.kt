@@ -3,6 +3,7 @@ package com.example.societycity.screen
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -12,6 +13,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
 import androidx.compose.material.Card
@@ -24,6 +26,10 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -34,6 +40,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.societycity.R
+import com.example.societycity.ui.theme.Bottomcardshap
 import com.example.societycity.ui.theme.CornerShape10
 import com.example.societycity.ui.theme.b_blue
 import com.example.societycity.ui.theme.grayscal
@@ -251,25 +258,56 @@ fun DailyNeedScreen() {
                 fontWeight = FontWeight.Bold
             )
         }
-        Row(modifier = Modifier
+
+        var isPopupVisible by remember { mutableStateOf(false) }
+
+        Box(modifier = Modifier
             .padding(top = 255.dp, start = 240.dp, end = 20.dp)) {
-            Button(
-                modifier = Modifier
-                    .width(145.dp)
-                    .height(35.dp)
-                    .clip(
-                        RoundedCornerShape(28.dp)
-                    ),
-                onClick = { },
-            ) {
-                Text(
-                    "Update Status",
-                    color = white,
-                    fontSize = 12.sp,
-                )
+            Button(modifier = Modifier.width(145.dp),onClick = { isPopupVisible = true }) {
+                Text("Update Status", color = white, fontSize = 12.sp)
             }
+            if (isPopupVisible) {
+                update_status {
+                    // TODO: Handle icon selection
+                    isPopupVisible = false
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun update_status(onIconSelected: (Int) -> Unit) {
+
+
+    Card(
+        modifier = Modifier
+            .padding(top = 70.dp, start = 20.dp, end = 20.dp, bottom = 70.dp)
+            .height(600.dp).width(335.dp)
+            .border(width = 2.dp, color = Color.LightGray, shape = Bottomcardshap.large),
+
+        ) {
+        Row(modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.Start
+        ) {
+            IconButton(
+                onClick = { },
+                modifier = Modifier.padding(top = 10.dp, start = 10.dp),
+                content = {
+                    Icon(Icons.Default.ArrowBack, contentDescription = "")
+                }
+            )
+
+            Text(
+                text = "Society Accounts",
+                color = grayscaltitle,
+                fontWeight = FontWeight.Bold,
+                fontSize = 18.sp,
+                modifier = Modifier.padding(top = 20.dp, start = 55.dp, end = 100.dp)
+            )
         }
 
 
     }
+
 }

@@ -298,7 +298,8 @@ fun HomeScreen() {
                         .padding(top = 20.dp)
                         .size(90.dp)
                         .width(130.dp)
-                        .height(130.dp)
+                        .height(130.dp),
+
                 )}
                 Row(modifier = Modifier
                     .padding(top = 197.dp, bottom = 358.dp, start = 205.dp, end = 108.dp)

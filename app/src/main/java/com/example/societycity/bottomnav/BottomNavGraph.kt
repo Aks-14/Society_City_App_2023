@@ -1,15 +1,19 @@
 package com.example.societycity.bottomnav
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.societycity.bottomNavigationFile.*
+import com.example.societycity.screen.DailyNeedScreen
 import com.example.societycity.screen.Discoverscreen
 import com.example.societycity.screen.HomeScreen
 import com.example.societycity.screen.MyProfileScreen
 
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun BottomNavGraph(
     navController: NavHostController

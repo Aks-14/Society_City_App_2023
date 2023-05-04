@@ -3,47 +3,23 @@ package com.example.societycity.screen
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Button
-import androidx.compose.material.Card
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material.rememberScaffoldState
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.societycity.R
-import com.example.societycity.ui.theme.Bottomcardshap
 import com.example.societycity.ui.theme.CornerShape10
-import com.example.societycity.ui.theme.b_blue
-import com.example.societycity.ui.theme.grayscal
 import com.example.societycity.ui.theme.grayscaltitle
 import com.example.societycity.ui.theme.green_dark
 import com.example.societycity.ui.theme.light_blue2
@@ -142,7 +118,7 @@ fun DailyNeedScreen() {
                             .padding(start = 7.dp)
                     ) {
                         Text(
-                            "In Procress",
+                            "In Process",
                             color = white,
                             fontSize = 13.sp,
                         )
@@ -165,7 +141,7 @@ fun DailyNeedScreen() {
             }
         }
 
-        // sub conetnt
+        // sub content
 
         Column(modifier= Modifier
             .fillMaxWidth()
@@ -206,7 +182,7 @@ fun DailyNeedScreen() {
                 fontSize = 12.sp,
             )
             Text(
-                "Kalyani Mukharjee, 9168660832",
+                "Abhilasha Harjeet, 9168660832",
                 modifier=Modifier.padding(start = 25.dp, end = 20.dp),
                 color = green_dark,
                 fontSize = 12.sp,
@@ -259,55 +235,263 @@ fun DailyNeedScreen() {
             )
         }
 
-        var isPopupVisible by remember { mutableStateOf(false) }
+        XYZ()
 
-        Box(modifier = Modifier
-            .padding(top = 255.dp, start = 240.dp, end = 20.dp)) {
-            Button(modifier = Modifier.width(145.dp),onClick = { isPopupVisible = true }) {
-                Text("Update Status", color = white, fontSize = 12.sp)
-            }
-            if (isPopupVisible) {
-                update_status {
-                    // TODO: Handle icon selection
-                    isPopupVisible = false
-                }
-            }
-        }
     }
 }
 
 @Composable
-fun update_status(onIconSelected: (Int) -> Unit) {
+fun Update_status(onIconSelected: (Int) -> Unit) {
+}
+
+@Composable
+fun XYZ() {
+    var showDialog by remember { mutableStateOf(false) }
+    var inputText by remember { mutableStateOf("") }
+    var username by remember { mutableStateOf("") }
 
 
-    Card(
-        modifier = Modifier
-            .padding(top = 70.dp, start = 20.dp, end = 20.dp, bottom = 70.dp)
-            .height(600.dp).width(335.dp)
-            .border(width = 2.dp, color = Color.LightGray, shape = Bottomcardshap.large),
-
-        ) {
-        Row(modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.Start
-        ) {
-            IconButton(
-                onClick = { },
-                modifier = Modifier.padding(top = 10.dp, start = 10.dp),
-                content = {
-                    Icon(Icons.Default.ArrowBack, contentDescription = "")
-                }
-            )
-
-            Text(
-                text = "Society Accounts",
-                color = grayscaltitle,
-                fontWeight = FontWeight.Bold,
-                fontSize = 18.sp,
-                modifier = Modifier.padding(top = 20.dp, start = 55.dp, end = 100.dp)
-            )
+    Column(modifier = Modifier
+        .fillMaxSize()
+        .padding(top = 250.dp, start = 237.dp, end = 20.dp)) {
+        // Button to show the popup
+        Button(onClick = { showDialog = true }, shape = RoundedCornerShape(20.dp)) {
+            Text(text = "Update Status")
         }
 
+        // Popup dialog
+        if (showDialog) {
+            AlertDialog(
+                onDismissRequest = { showDialog = false },
+//                title = { Text(text = "Title : Water Leakage") },
 
+                text = {
+                    Column {
+                        Text(
+                            text = "Title : Water Leakage",
+                            color = grayscaltitle,
+                            fontSize = 14.sp,
+                        )
+                        Text(
+                            text = "Open",
+                            modifier = Modifier.padding(start = 0.dp, end = 20.dp),
+                            color = green_dark,
+                            fontSize = 13.sp,
+                            fontWeight = FontWeight.Bold
+                        )
+
+                        Row(
+                            Modifier
+                                .fillMaxWidth(),
+                            horizontalArrangement = Arrangement.Start
+                        ) {
+                            Box(
+                                modifier = Modifier
+                                    .padding(top = 10.dp)
+                                    .width(50.dp)
+                                    .height(50.dp)
+                                    .background(Color.LightGray)
+                            )
+                            Column(modifier = Modifier.fillMaxWidth()) {
+
+                                Text(
+                                    "Complaint on :",
+                                    modifier = Modifier.padding(top = 10.dp, start = 15.dp),
+                                    color = Color.LightGray,
+                                    fontSize = 12.sp,
+                                )
+                                Text(
+                                    "TN14640",
+                                    modifier = Modifier.padding(start = 15.dp),
+                                    color = grayscaltitle,
+                                    fontSize = 14.sp,
+                                    fontWeight = FontWeight.Bold
+                                )
+                            }
+                        }
+
+                        Row(
+                            Modifier
+                                .fillMaxWidth()
+                                .padding(top = 15.dp),
+                            horizontalArrangement = Arrangement.Start
+                        ) {
+                            Text(
+                                "Raised by :",
+                                modifier = Modifier.padding(start = 0.dp),
+                                color = Color.LightGray,
+                                fontSize = 12.sp,
+                            )
+                            Text(
+                                "Abhilasha Harjeet",
+                                modifier = Modifier.padding(start = 15.dp, end = 20.dp),
+                                color = grayscaltitle,
+                                fontSize = 12.sp,
+                                fontWeight = FontWeight.Bold
+                            )
+                        }
+
+                        Row(
+                            Modifier
+                                .fillMaxWidth(),
+                            horizontalArrangement = Arrangement.Start
+                        ) {
+                            Text(
+                                "Raised on :",
+                                modifier = Modifier.padding(start = 0.dp),
+                                color = Color.LightGray,
+                                fontSize = 12.sp,
+                            )
+                            Text(
+                                "07 March 2023, 02:36 PM",
+                                modifier = Modifier.padding(start = 15.dp, end = 20.dp),
+                                color = grayscaltitle,
+                                fontSize = 12.sp,
+                                fontWeight = FontWeight.Bold
+                            )
+                        }
+                        Row(
+                            Modifier
+                                .fillMaxWidth(),
+                            horizontalArrangement = Arrangement.Start
+                        ) {
+                            Text(
+                                "Mobile No. :",
+                                modifier = Modifier.padding(start = 0.dp),
+                                color = Color.LightGray,
+                                fontSize = 12.sp,
+                            )
+                            Text(
+                                "9168660832",
+                                modifier = Modifier.padding(start = 9.dp, end = 20.dp),
+                                color = grayscaltitle,
+                                fontSize = 12.sp,
+                                fontWeight = FontWeight.Bold
+                            )
+                        }
+                        Row(
+                            Modifier
+                                .fillMaxWidth(),
+                            horizontalArrangement = Arrangement.Start
+                        ) {
+                            Text(
+                                "Address:",
+                                modifier = Modifier.padding(start = 0.dp),
+                                color = Color.LightGray,
+                                fontSize = 12.sp,
+                            )
+                            Text(
+                                "Flat no-d-603 Wing- D, Flat no-d",
+                                modifier = Modifier.padding(start = 27.dp, end = 20.dp),
+                                color = grayscaltitle,
+                                fontSize = 12.sp,
+                                fontWeight = FontWeight.Bold
+                            )
+                        }
+                        Row(
+                            Modifier
+                                .fillMaxWidth(),
+                            horizontalArrangement = Arrangement.Start
+                        ) {
+                            Text(
+                                "Building:",
+                                modifier = Modifier.padding(start = 0.dp),
+                                color = Color.LightGray,
+                                fontSize = 12.sp,
+                            )
+                            Text(
+                                "Gayatri Sankul",
+                                modifier = Modifier.padding(start = 27.dp, end = 20.dp),
+                                color = grayscaltitle,
+                                fontSize = 12.sp,
+                                fontWeight = FontWeight.Bold
+                            )
+                        }
+                        Row(
+                            Modifier
+                                .fillMaxWidth(),
+                            horizontalArrangement = Arrangement.Start
+                        ) {
+                            Text(
+                                "Description:",
+                                modifier = Modifier.padding(start = 0.dp),
+                                color = Color.LightGray,
+                                fontSize = 12.sp,
+                            )
+                            Text(
+                                "As per discussion, dont allow visitors to stay at the society after 12 ",
+                                modifier = Modifier.padding(start = 9.dp, end = 20.dp),
+                                color = grayscaltitle,
+                                fontSize = 12.sp,
+                                fontWeight = FontWeight.Bold
+                            )
+                        }
+                        Text(text = "Remarks:", fontSize = 13.sp)
+                        OutlinedTextField(
+                            value = username,
+                            onValueChange = { username = it },
+                            modifier = Modifier
+                                .height(100.dp)
+                                .fillMaxWidth(),
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
+                        )
+                        Text(text = "Status:", fontSize = 13.sp)
+                        OutlinedTextField(
+                            value = username,
+                            onValueChange = { username = it },
+                            modifier = Modifier
+                                .height(45.dp)
+                                .fillMaxWidth(),
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
+                        )
+
+                    }
+                    Row(
+                        Modifier
+                            .fillMaxWidth(),
+                        horizontalArrangement = Arrangement.Start
+                    ) {
+                        TextButton(
+                            onClick = { /*TODO*/ },
+                            modifier = Modifier
+                                .padding(top = 440.dp, start = 20.dp)
+                                .height(40.dp)
+                        )
+                        {
+                            Text(text = "View Log",
+                                fontSize = 13.sp
+                                )
+                        }
+
+                        Button(onClick = { },
+                            modifier = Modifier
+                            .padding(top = 440.dp, start = 30.dp)
+                            .height(40.dp),
+                            shape = RoundedCornerShape(20.dp)) {
+                            Text(text = "Update Status", fontSize = 13.sp)
+                        }
+                    }
+                },
+
+
+                confirmButton = {
+//                    Button(
+//                        onClick = {
+//                            // Handle update logic with inputText
+//                            showDialog = false
+//                        }
+//                    ) {
+//                        Text(text = "Update Status")
+//                    }
+                },
+
+//                dismissButton = {
+//                    Button(onClick = { showDialog = false }) {
+//                        Text(text = "Cancel")
+//                    }
+//                },
+
+                )
+        }
     }
-
 }

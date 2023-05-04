@@ -247,7 +247,6 @@ fun Update_status(onIconSelected: (Int) -> Unit) {
 @Composable
 fun XYZ() {
     var showDialog by remember { mutableStateOf(false) }
-    var inputText by remember { mutableStateOf("") }
     var username by remember { mutableStateOf("") }
 
 

@@ -6,11 +6,11 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.societycity.bottomNavigationFile.*
 import com.example.societycity.screen.DailyNeedScreen
 import com.example.societycity.screen.Discoverscreen
 import com.example.societycity.screen.HomeScreen
 import com.example.societycity.screen.MyProfileScreen
+import com.example.societycity.screen.Popularscreen
 
 
 @RequiresApi(Build.VERSION_CODES.O)

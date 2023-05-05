@@ -16,6 +16,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.societycity.screen.Visitors_In
 import com.example.societycity.ui.theme.blue
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -84,6 +85,7 @@ fun MyApp() {
         composable("splash_screen") { SplashScreen(navController) }
         composable("start_page") { StartPage(navController) }
         composable("first_page") { FirstPage(navController) }
-//        composable("main_home") { MainScreen(navController) }
+//        composable("main_home") { Visitors_In(navController) }
     }
 }
+

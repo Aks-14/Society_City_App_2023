@@ -185,10 +185,6 @@ fun FirstPage(navController: NavController) {
     }
 }
 
-
-
-
-
 @Composable
 fun OTPScreen() {
     // Set up the local state for the received OTP code and the entered OTP code

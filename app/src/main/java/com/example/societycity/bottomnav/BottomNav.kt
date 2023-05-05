@@ -131,13 +131,6 @@ fun AddItem(
     }
 }
 
-@RequiresApi(Build.VERSION_CODES.O)
-@Composable
-@Preview
-fun BottomNavPreview() {
-    BottomNavabhi()
-}
-
 
 
 

@@ -18,6 +18,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.compose.rememberNavController
 import com.example.societycity.R
 import com.example.societycity.ui.theme.CornerShape10
 import com.example.societycity.ui.theme.grayscaltitle
@@ -29,8 +30,10 @@ import com.example.societycity.ui.theme.white
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun DailyNeedScreen() {
+    val navController = rememberNavController()
     Scaffold(
         scaffoldState = rememberScaffoldState(),
+
         topBar = {
             TopAppBar(
                 title = {
@@ -38,7 +41,7 @@ fun DailyNeedScreen() {
                 },
                 navigationIcon = {
                     IconButton(
-                        onClick = {},
+                        onClick = {navController.navigateUp()},
                         content = {
                             Icon(Icons.Default.ArrowBack, contentDescription = "")
                         }
@@ -238,6 +241,7 @@ fun DailyNeedScreen() {
         XYZ()
 
     }
+
 }
 
 @Composable
@@ -418,7 +422,7 @@ fun XYZ() {
                                 fontSize = 12.sp,
                             )
                             Text(
-                                "As per discussion, dont allow visitors to stay at the society after 12 ",
+                                "As per discussion, don't allow visitors to stay at the society after 12 ",
                                 modifier = Modifier.padding(start = 9.dp, end = 20.dp),
                                 color = grayscaltitle,
                                 fontSize = 12.sp,
@@ -439,7 +443,7 @@ fun XYZ() {
                             value = username,
                             onValueChange = { username = it },
                             modifier = Modifier
-                                .height(45.dp)
+                                .height(50.dp)
                                 .fillMaxWidth(),
                             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
                         )
@@ -464,8 +468,8 @@ fun XYZ() {
 
                         Button(onClick = { },
                             modifier = Modifier
-                            .padding(top = 440.dp, start = 30.dp)
-                            .height(40.dp),
+                                .padding(top = 440.dp, start = 30.dp)
+                                .height(40.dp),
                             shape = RoundedCornerShape(20.dp)) {
                             Text(text = "Update Status", fontSize = 13.sp)
                         }
@@ -494,3 +498,4 @@ fun XYZ() {
         }
     }
 }
+

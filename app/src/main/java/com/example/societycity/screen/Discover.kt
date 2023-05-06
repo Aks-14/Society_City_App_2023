@@ -35,7 +35,6 @@ import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.ImeAction
@@ -77,8 +76,12 @@ fun NavGraph() {
         composable("daily_visitors") { Daily_Visitors() }
         composable("visitors_out") { Visitors_Out() }
         composable("pre_approval") { Pre_Approval() }
+        composable("nav_drawer") { Nav_Drawer() }
+
     }
 }
+
+
 
 @Composable
 fun HomePage(navController: NavController) {
@@ -101,6 +104,9 @@ fun HomePage(navController: NavController) {
 
         Button(onClick = { navController.navigate("pre_approval")}) {
             Text("Pre Approval")
+        }
+        Button(onClick = { navController.navigate("nav_drawer")}) {
+            Text("Nav Drawer")
         }
     }
 }
@@ -784,6 +790,12 @@ fun Pre_Approval(){
 
     }
 
+}
+
+
+@Composable
+fun Nav_Drawer() {
+    TODO("Not yet implemented")
 }
 
 

@@ -15,7 +15,9 @@ val darkgreen=Color(0xFF30A283)
 val purple=Color(0xFF9B51E0)
 val light_blue2=Color(0xFFDCEFFF)
 val green_dark= Color(0xFF007454)
-val fm=Color(0xFF0074C6)
+val GreyScale_Body=Color(0xFF4E4B66)
+val GreyScale=Color(0xFFA0A3BD)
+
 
 
 

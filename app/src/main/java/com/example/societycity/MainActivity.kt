@@ -53,6 +53,11 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.societycity.bottomnav.BottomNavabhi
+import com.example.societycity.screen.DailyNeedScreen
+import com.example.societycity.screen.Discoverscreen
+import com.example.societycity.screen.HomeScreen
+import com.example.societycity.screen.MyProfileScreen
+import com.example.societycity.screen.Popularscreen
 
 import com.example.societycity.ui.theme.*
 import kotlinx.coroutines.CoroutineScope
@@ -80,6 +85,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@RequiresApi(Build.VERSION_CODES.O)
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun MainScreen(){
@@ -222,106 +228,9 @@ fun DrawerItem(item: NavigationItem, selected: Boolean, onItemClick: (Navigation
 
 }
 
-@Composable
-fun HomeScreen(){
-    Column(
-        modifier = Modifier
-            .fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
 
-        Text(
-            text = "Home Screen",
-            fontWeight = FontWeight.Bold,
-            color = Color.Black,
-            fontSize = 30.sp,
-            textAlign = TextAlign.Center
-        )
 
-    }
-}
-
-@Composable
-fun ProfileScreen(){
-    Column(
-        modifier = Modifier
-            .fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-
-        Text(
-            text = "Profile Screen",
-            fontWeight = FontWeight.Bold,
-            color = Color.Black,
-            fontSize = 30.sp,
-            textAlign = TextAlign.Center
-        )
-
-    }
-}
-
-@Composable
-fun SettingsScreen(){
-    Column(
-        modifier = Modifier
-            .fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-
-        Text(
-            text = "Settings Screen",
-            fontWeight = FontWeight.Bold,
-            color = Color.Black,
-            fontSize = 30.sp,
-            textAlign = TextAlign.Center
-        )
-
-    }
-}
-
-@Composable
-fun ShareScreen(){
-    Column(
-        modifier = Modifier
-            .fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-
-        Text(
-            text = "Share Screen",
-            fontWeight = FontWeight.Bold,
-            color = Color.Black,
-            fontSize = 30.sp,
-            textAlign = TextAlign.Center
-        )
-
-    }
-}
-
-@Composable
-fun ContactScreen(){
-    Column(
-        modifier = Modifier
-            .fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-
-        Text(
-            text = "Contact Screen",
-            fontWeight = FontWeight.Bold,
-            color = Color.Black,
-            fontSize = 30.sp,
-            textAlign = TextAlign.Center
-        )
-
-    }
-}
-
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun Navigation(navController: NavHostController){
 
@@ -332,19 +241,19 @@ fun Navigation(navController: NavHostController){
         }
 
         composable(NavigationItem.Profile.route){
-            ProfileScreen()
+            MyProfileScreen()
         }
 
         composable(NavigationItem.Settings.route){
-            SettingsScreen()
+            Discoverscreen()
         }
 
         composable(NavigationItem.Share.route){
-            ShareScreen()
+            Popularscreen()
         }
 
         composable(NavigationItem.Contact.route){
-            ContactScreen()
+            DailyNeedScreen()
         }
 
     }
